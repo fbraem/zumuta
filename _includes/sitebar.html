@@ -1,0 +1,81 @@
+<div id="sidebar">
+	<ul>
+		<li>
+		    <img src="{{site.baseurl}}/img/me.jpg" class="border" style="float:right;margin-left:10px;width:100px;height:100px" />
+			<h2>Zumuta!</h2>
+			<p>
+				The name of the website is based on "Zo moet dat" in Dutch, which means "That's the way to do it".
+				The website will be used to share my ideas, my open source work, ...<br />
+				<a href="http://be.linkedin.com/in/frankybraem" style="text-decoration:none;"><span style="font: 80% Arial,sans-serif; color:#0783B6;"><img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Franky Braem's LinkedIn profile" style="vertical-align:middle" border="0">View Franky Braem's profile</span></a>
+				<br />
+				Follow me on Twitter <a href="https://twitter.com/fbraem">@fbraem</a>.
+			</p>
+		</li>
+		<li>
+			<div style="display:flex; flex-direction: column; justify-content: center;">
+				<div>
+					<a href="https://github.com/fbraem/kwai-api">Kwai-api</a> is allowed
+					to use phpstorm from JetBrains!
+				</div>
+				<div style="text-align:center;">
+					<a href="https://www.jetbrains.com/?from=kwai-api">
+						<img src="{{ site.baseurl }}/img/jetbrains.png" style="width:100px;height:100px;" />
+					</a>
+				</div>
+			</div>
+		</li>
+		<li>
+			<h2>Latest articles</h2>
+			{% for post in site.posts limit:5 %}
+		     <div style="margin-bottom:10px;margin-left:15px">
+		       <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br />
+		       <em>{{ post.date | date: "%-d %B %Y" }}</em>
+		     </div>
+		    {% endfor %}
+		</li>
+<!--
+		<li>
+			<h2>Categories</h2>
+			<ul>
+				<li><a href="#">Aliquam libero</a></li>
+				<li><a href="#">Consectetuer adipiscing elit</a></li>
+				<li><a href="#">Metus aliquam pellentesque</a></li>
+				<li><a href="#">Suspendisse iaculis mauris</a></li>
+				<li><a href="#">Urnanet non molestie semper</a></li>
+				<li><a href="#">Proin gravida orci porttitor</a></li>
+			</ul>
+		</li>
+		<li>
+			<h2>Blogroll</h2>
+			<ul>
+				<li><a href="#">Aliquam libero</a></li>
+				<li><a href="#">Consectetuer adipiscing elit</a></li>
+				<li><a href="#">Metus aliquam pellentesque</a></li>
+				<li><a href="#">Suspendisse iaculis mauris</a></li>
+				<li><a href="#">Urnanet non molestie semper</a></li>
+				<li><a href="#">Proin gravida orci porttitor</a></li>
+			</ul>
+		</li>
+		<li>
+			<h2>Archives</h2>
+			<ul>
+				<li><a href="#">Aliquam libero</a></li>
+				<li><a href="#">Consectetuer adipiscing elit</a></li>
+				<li><a href="#">Metus aliquam pellentesque</a></li>
+				<li><a href="#">Suspendisse iaculis mauris</a></li>
+				<li><a href="#">Urnanet non molestie semper</a></li>
+				<li><a href="#">Proin gravida orci porttitor</a></li>
+			</ul>
+		</li> -->
+	</ul>
+	<div style="text-align:center">
+		<form style="margin-top:30px;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+			<input type="image" src="https://www.paypalobjects.com/en_US/BE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+		<div style="margin-top:10px">Donations are invested in the development of Open Source software.</div>
+	</div>
+</div> <!-- end #sidebar -->
