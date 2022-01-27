@@ -7,7 +7,7 @@
     <p class="text-lg leading-6 font-medium text-gray-900">
       {{ title }}
     </p>
-    <p
+    <div
         class="excerpt mt-2 text-base text-gray-500"
         v-html="excerpt"
     />
