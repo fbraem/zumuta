@@ -15,6 +15,14 @@ v-html, python chained comparisons and stitches
 
 ### v-html
 
+This week I encountered the following error while generating this website
+with [vitepress](https://vitepress.vuejs.org/). The problem here is the use of 
+the vue directive v-html.
+
+::: danger
+Hydration completed but contains mismatches.
+:::
+
 With v-html it's possible to inject HTML into an element. But you have to be
 careful not to break things: v-html can break HTML. What happens when v-html
 is used on a ``p`` element and the content of v-html also contains a ``p`` 
