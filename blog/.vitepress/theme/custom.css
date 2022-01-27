@@ -57,3 +57,7 @@ blockquote p:last-child {
 footer h2 {
     @apply border-0
 }
+
+div.custom-block.danger {
+    @apply p-4
+}
