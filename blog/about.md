@@ -3,6 +3,10 @@ layout: page
 title: About
 footer: Franky Braem - Zumuta!
 ---
+
+> The name **Zumuta!** is based on the Dutch phrase *"Zo moet dat"*. A sentence that I 
+> regularly use when I explain something. It means "That's the way to do it".
+
 The first computer I saw was a [Commodore 64](http://en.wikipedia.org/wiki/Commodore_64).
 This computer made me decide to follow computer science at school. In 1989 I
 finished my bachelor degree for informatics at the [Karel de Grote-Hogeschool](http://www.kdg.be/kdg-in-english).
@@ -53,5 +57,8 @@ You can see it in action on our club website [Judokwai Kemzeke](https://www.judo
 I also manage websites for some societies/clubs. I've used [Drupal](http://www.drupal.org)
 , [Joomla](http://www.joomla.org), [CakePHP](http://www.cakephp.org),
 [Laravel](http://laravel.com), [Slim](https://www.slimframework.com/) and [Jekyll](http://www.jekyllrb.com).
+
+Besides IT, cycling is also one of my favourite things to do. You can read
+my [cycling stories](/cycling) also on this website.
 
 Franky.
