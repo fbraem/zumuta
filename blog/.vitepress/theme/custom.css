@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-blockquote {
-    @apply my-4 p-4 border-l-4 border-yellow-500 bg-yellow-200 text-gray-700
-}
-
-article a, .excerpt a, .page a {
+article a, .excerpt a, .page a, p a, .link a {
     @apply text-blue-500 hover:underline
 }
 
@@ -39,7 +35,7 @@ article ul li {
 }
 
 article img {
-    @apply mx-auto
+    @apply mx-auto mt-4 mb-6
 }
 
 article hr {
@@ -48,4 +44,16 @@ article hr {
 
 .page p {
     @apply mb-4
+}
+
+blockquote {
+    @apply my-4 p-4 border-l-4 border-yellow-500 bg-yellow-200 text-gray-700
+}
+
+blockquote p:last-child {
+    @apply mb-0
+}
+
+footer h2 {
+    @apply border-0
 }
