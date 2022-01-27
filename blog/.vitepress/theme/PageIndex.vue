@@ -24,12 +24,7 @@ import Excerpt from "./Excerpt.vue"
       <Content />
       <ul class="divide-y divide-gray-200">
         <li class="py-12" v-for="{ title, href, date, excerpt } of posts">
-          <article
-              class="
-            space-y-2
-            xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline
-          "
-          >
+          <article class="space-y-2">
             <Excerpt
                 :date="date"
                 :href="href"
