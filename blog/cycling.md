@@ -11,6 +11,9 @@ sidebar: false
 
 > <i class="fas fa-music mr-2" />Bicycle, bicycle, bicycle, I want to ride my bicycle, bicycle...<i class="fas fa-music ml-2" />
 
-My cycling journey started wayback in [2012](/cycling/2012.html). In the meantime, quite a few milestones are
-reached. You can find them all here. Every year I try to set a goal, which
-fortunately is easier to fulfill than the estimates of an IT project.
+My cycling journey started way back in [2012](/cycling/2012.html). In the meantime, 
+quite a few milestones are reached. You can find them all here. Every year I 
+try to set a goal, which fortunately is easier to fulfill than the estimates 
+of an IT project.
+
+> This journey is not completed yet, still working on adding each year to the site...
