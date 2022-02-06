@@ -104,16 +104,17 @@ found the Reflection class will be added as attribute to the request.
             $parameters = $matcher->matchRequest($symfonyRequest);
             $route = $parameters['_route'] ?? null;
             unset($parameters['_route']);
-            $handler = $parameters['_action'] ?? null;
+            $action = $parameters['_action'] ?? null;
             unset($parameters['_action']);
             $request = $request
                 ->withAttribute('kwai.route', $route)
-                ->withAttribute('kwai.action', $handler)
+                ->withAttribute('kwai.action', $action)
                 ->withAttribute('kwai.action.args', $parameters)
             ;
         } catch (\Exception $e) {
             throw new RouteException(message: 'Could not find a route', previous: $e);
         }
+        return $handler->handle($request);
     }
 ````
 
