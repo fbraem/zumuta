@@ -75,6 +75,7 @@ The `configureRoute` can be used to add some configuration to the route. In our
 case we set _action to the class that is currently loaded. This class is
 a reflection to our action class `GetTrainingAction`. In my framework, the action
 class always implements an `__invoke` method, so we can ignore `$method` here.
+`configureRoute` can also be used to handle the `options` passed to the route.
 
 Now we can load the action class into our route collection:
 
@@ -143,4 +144,4 @@ The actual execution of the action is done in the RequestHandlerMiddleware
 
 ### Read more about attributes
 [Attributes in PHP 8](https://stitcher.io/blog/attributes-in-php-8) - Stitcher  
-[PHP 8.0 A Attributes](https://php.watch/versions/8.0/attributes) - PHP.Watch
+[PHP 8.0 Attributes](https://php.watch/versions/8.0/attributes) - PHP.Watch
