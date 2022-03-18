@@ -25,7 +25,7 @@ is the third factor of [The Twelve-Factor App](https://www.12factor.net/).
 composer require vlucas/phpdotenv
 ````
 
-## Configuration class
+### Configuration class
 
 Create a wrapper class `Configuration` to hide the dotenv implementation. Add 
  factory methods to create a configuration from a file and from a string.
@@ -78,16 +78,17 @@ method, but that method only returns the loaded variables. When you want to add
 validation, you need a Dotenv instance. A `StringStore` is available and 
 `createFromString` hides the complexity to create and load a Dotenv from a 
 string. Probably `createFromString` will not be used in production code, but it
-can be handy in unit tests.
+can be useful in unit tests.
 
 After calling `load`, all variables will be available in `$_SERVER`, `$_ENV` or
-`getenv()`. The content of the variables are not typesafe and using these variables
-all over the place in the code is not a good idea. What happens when a name of 
-a variable needs to change? Make untyped content as soon as possible typed. IDE's
-and static code analyzers will make it possible to find errors before the code
-is released to production. And as an extra, refactoring code will be easier.
+`getenv()`. Using these variables all over the place in the code is not a good 
+idea. What happens when a name of a variable needs to change? The content of 
+these variables are not typesafe. Make untyped content as soon as possible typed. 
+IDE's and static code analyzers will make it possible to find errors before the 
+code is released to production. And as an extra, refactoring code will be a lot 
+easier.
 
-## A sample: DatabaseConfiguration.
+### A sample: DatabaseConfiguration.
 
 First make a contract between the Configuration class and the several
 configurations: the `Configurable` interface:
@@ -208,7 +209,7 @@ it('detect a missing password in DatabaseConfiguration', function () {
 ````
 > These tests are written with [PestPHP](https://pestphp.com/).
 
-## Dependency injection container
+### Dependency injection container
 
 `getenv` and `putenv` are not thread safe. I've experienced that when running
 multiple tests. To be sure that only one instance is created of the 
