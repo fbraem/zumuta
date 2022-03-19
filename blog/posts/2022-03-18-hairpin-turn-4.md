@@ -8,7 +8,6 @@ tags: [hairpin-turn, php]
 Configure your application using PHP dotenv
 
 ---
-
 > In a hairpin-turn article I write about things I learn along the way of heading
 > to the top of IT...
 
@@ -39,9 +38,12 @@ use Dotenv\Store\StringStore;
 
 class Configuration
 {
+    private array $variables = [];
+
     public function __construct(
         private Dotenv $env
     ) {
+        $this->variables = $env->load();
     }
 
     /**
@@ -54,7 +56,6 @@ class Configuration
     public static function createFromFile(string $path, string $file): self
     {
         $env = Dotenv::createImmutable($path, $file);
-        $env->load();
         return new self($env);
     }
 
@@ -66,9 +67,12 @@ class Configuration
      */
     public static function createFromString(string $content): self
     {
-        $repository = RepositoryBuilder::createWithDefaultAdapters()->immutable()->make();
+        $repository = RepositoryBuilder::createWithNoAdapters()
+            ->immutable()
+            ->addAdapter(ArrayAdapter::create()->get())
+            ->make()
+        ;
         $env = new Dotenv(new StringStore($content), new Parser(), new Loader(), $repository);
-        $env->load();
         return new self($env);
     }
 ````
@@ -177,7 +181,7 @@ The DatabaseConfiguration is created with a factory method in Configuration:
     public function getDatabaseConfiguration(): DatabaseConfiguration
     {
         DatabaseConfiguration::validate($this->env);
-        return DatabaseConfiguration::createFromVariables($_SERVER);
+        return DatabaseConfiguration::createFromVariables($this->variables);
     }
 ````
 
@@ -209,8 +213,9 @@ it('detect a missing password in DatabaseConfiguration', function () {
 ````
 > These tests are written with [PestPHP](https://pestphp.com/).
 
-### Dependency injection container
-
+::: tip
 `getenv` and `putenv` are not thread safe. I've experienced that when running
 multiple tests. To be sure that only one instance is created of the 
-Configuration class, a dependency injection container can be used.
+Configuration class, use a dependency injection container. Or use
+an ArrayAdapter as seen in `createFromString`.
+:::
