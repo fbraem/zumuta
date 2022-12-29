@@ -1,0 +1,81 @@
+---
+import Layout from './Layout.astro'
+const {frontmatter} = Astro.props;
+---
+<Layout frontmatter={frontmatter}>
+  <main class="container mx-auto divide-y divide-gray-200 max-w-7xl p-4">
+    <article>
+        <slot />
+    </article>
+    <div class="pt-4">
+        In { frontmatter.year } the odometer stopped at { frontmatter.distance } km.
+        The altimeter reached { frontmatter.height } m.
+    </div>
+</main>
+</Layout>
+
+<style is:global>
+article a, .excerpt a, p a, .link a {
+    @apply text-blue-500 hover:underline
+}
+
+article h1 {
+    @apply text-3xl font-bold mb-2 text-gray-800
+}
+
+article h2 {
+    @apply mb-2 border-0
+}
+
+article h3 {
+    @apply text-xl font-medium mb-2 text-gray-800
+}
+
+article h4 {
+    @apply text-base font-medium mb-2 text-gray-800
+}
+
+article pre {
+    @apply p-4 rounded-lg my-4
+}
+
+div.prose > div > p {
+    @apply mb-4 text-gray-700
+}
+
+article ul {
+    @apply ml-5 md:ml-10 mb-5
+}
+
+article ul li {
+    @apply list-disc list-inside
+}
+
+article img {
+    @apply mx-auto mt-4 mb-6
+}
+
+article hr {
+    @apply hidden
+}
+
+article p {
+    @apply mb-4
+}
+
+blockquote {
+    @apply my-4 p-4 border-l-4 border-yellow-500 bg-yellow-200 text-gray-700
+}
+
+blockquote p:last-child {
+    @apply mb-0
+}
+
+footer h2 {
+    @apply border-0
+}
+
+div.custom-block.danger {
+    @apply p-4
+}    
+</style>
